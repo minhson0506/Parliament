@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".FragmentParliament">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:fontFamily="cursive"
+            android:textSize="25sp"
+            android:layout_margin="10dp"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:fontFamily="monospace"
+            android:text="Age"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Status"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/constituency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="casual"
+            android:textSize="25sp"
+            android:layout_margin="10dp"
+            android:text="Constituency" />
+
+        <ImageView
+            android:id="@+id/imageParty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btRandom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="RANDOM" />
+
+        <Button
+            android:id="@+id/btBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="BACK TO PARTY LIST" />
+    </LinearLayout>
+</layout>
