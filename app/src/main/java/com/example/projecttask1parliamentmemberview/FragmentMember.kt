@@ -45,7 +45,8 @@ class FragmentParliament : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.
+        inflate(
             inflater,
             R.layout.fragment_member,
             container,
