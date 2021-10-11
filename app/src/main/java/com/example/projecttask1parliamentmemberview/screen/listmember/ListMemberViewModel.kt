@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.projecttask1parliamentmemberview.data.Member
 import com.example.projecttask1parliamentmemberview.data.MemberDao
 import com.example.projecttask1parliamentmemberview.data.MemberDatabase
+import com.example.projecttask1parliamentmemberview.data.MemberRepository
 import com.example.projecttask1parliamentmemberview.network.Api
 import kotlinx.coroutines.launch
 
@@ -18,7 +19,9 @@ import kotlinx.coroutines.launch
  */
 
 class ListMemberViewModel : ViewModel() {
-    private val database: MemberDao
+    private val database: MemberDao = MemberDatabase.getInstance().memberDao
+    private val getAllData: LiveData<List<Member>>
+    private val repository: MemberRepository
 
     // The internal MutableLiveData String that stores the most recent response
     private val _response = MutableLiveData<List<Member>>()
@@ -36,7 +39,8 @@ class ListMemberViewModel : ViewModel() {
         get() = _navigateToMember
 
     init {
-        database = MemberDatabase.getInstance().memberDao
+        repository = MemberRepository(database)
+        getAllData = repository.getData
         getParliamentInfo()
     }
 
@@ -50,7 +54,7 @@ class ListMemberViewModel : ViewModel() {
                 //insert data to Room
                 if (fetchedData.isNotEmpty()) {
                     fetchedData.forEach {
-                        database.insert(it)
+                        repository.insert(it)
                     }
                 }
             } catch (e: Exception) {

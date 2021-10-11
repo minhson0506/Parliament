@@ -23,6 +23,7 @@ abstract class MemberDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: MemberDatabase? = null
+
         fun getInstance(): MemberDatabase {
             synchronized(this) {
                 var instance = INSTANCE
