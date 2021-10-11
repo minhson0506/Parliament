@@ -18,10 +18,12 @@ import kotlinx.coroutines.launch
  */
 
 class ListMemberViewModel : ViewModel() {
-    private val database: MemberDao = MemberDatabase.getInstance().memberDao
+    private val database: MemberDao
 
     // The internal MutableLiveData String that stores the most recent response
     private val _response = MutableLiveData<List<Member>>()
+    val response: LiveData<List<Member>>
+        get() = _response
 
     // Get list of members from database
     private lateinit var _allMembers: LiveData<List<Member>>
@@ -34,6 +36,7 @@ class ListMemberViewModel : ViewModel() {
         get() = _navigateToMember
 
     init {
+        database = MemberDatabase.getInstance().memberDao
         getParliamentInfo()
     }
 
@@ -49,7 +52,6 @@ class ListMemberViewModel : ViewModel() {
                     fetchedData.forEach {
                         database.insert(it)
                     }
-
                 }
             } catch (e: Exception) {
                 _response.value = ArrayList()

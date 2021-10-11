@@ -30,7 +30,7 @@ private val retrofit = Retrofit.Builder()
 // Get database from base URL
 interface ApiService {
     @GET("mps.json")
-    fun getProperties(): List<Member>
+    suspend fun getProperties(): List<Member>
 }
 
 object Api {

@@ -16,7 +16,8 @@ import com.example.projecttask1parliamentmemberview.MyApp
     version = 1,
     exportSchema = false
 )
-abstract class MemberDatabase: RoomDatabase() {
+
+abstract class MemberDatabase : RoomDatabase() {
     abstract val memberDao: MemberDao
 
     companion object {
