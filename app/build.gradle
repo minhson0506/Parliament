@@ -63,6 +63,7 @@ ext {
     version_recycler = "1.2.1"
     version_glide = "4.12.0"
     version_work = "1.0.1"
+    version_timber = "4.7.1"
 }
 dependencies {
     //Kotlin components
@@ -114,4 +115,7 @@ dependencies {
 
     //WorkManager
     implementation "android.arch.work:work-runtime-ktx:$version_work"
+
+    // logging
+    implementation "com.jakewharton.timber:timber:$version_timber"
 }

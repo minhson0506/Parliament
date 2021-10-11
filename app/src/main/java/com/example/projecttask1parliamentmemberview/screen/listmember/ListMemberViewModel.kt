@@ -1,6 +1,5 @@
 package com.example.projecttask1parliamentmemberview.screen.listmember
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +10,7 @@ import com.example.projecttask1parliamentmemberview.data.MemberDatabase
 import com.example.projecttask1parliamentmemberview.data.MemberRepository
 import com.example.projecttask1parliamentmemberview.network.Api
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 /**
  * Name: Son Dang (2012177)
@@ -21,12 +21,10 @@ import kotlinx.coroutines.launch
 class ListMemberViewModel : ViewModel() {
     private val database: MemberDao = MemberDatabase.getInstance().memberDao
     private val getAllData: LiveData<List<Member>>
-    private val repository: MemberRepository
+    private val repository: MemberRepository = MemberRepository(database)
 
     // The internal MutableLiveData String that stores the most recent response
     private val _response = MutableLiveData<List<Member>>()
-    val response: LiveData<List<Member>>
-        get() = _response
 
     // Get list of members from database
     private lateinit var _allMembers: LiveData<List<Member>>
@@ -39,7 +37,6 @@ class ListMemberViewModel : ViewModel() {
         get() = _navigateToMember
 
     init {
-        repository = MemberRepository(database)
         getAllData = repository.getData
         getParliamentInfo()
     }
@@ -59,7 +56,7 @@ class ListMemberViewModel : ViewModel() {
                 }
             } catch (e: Exception) {
                 _response.value = ArrayList()
-                Log.i("error", e.message.toString())
+                Timber.d("Error: ${e.message.toString()}")
             }
         }
     }
