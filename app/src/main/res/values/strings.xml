@@ -2,4 +2,21 @@
     <string name="app_name">Project Task 1 Parliament Member View</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="status">Status</string>
+    <string name="constituency">Constituency</string>
+    <string name="minister">Minister</string>
+    <string name="member_of_parliament">Member of Parliament</string>
+    <string name="random_member">Random</string>
+    <string name="member_details">Member Details</string>
+    <string name="submit">Submit</string>
+    <string name="comments">Comments</string>
+    <string name="list_of_comments">List Of Comments</string>
+    <string name="rating_average">Rating Average</string>
+    <string name="see_all_comments">See all comments</string>
+    <string name="comment_item">Comment Item</string>
+    <string name="members_of_parliament">Members of Parliament</string>
+    <string name="finnish_parliament">Finnish Parliament</string>
+    <string name="check_member_list">Check Member List</string>
 </resources>

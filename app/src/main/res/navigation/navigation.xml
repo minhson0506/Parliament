@@ -3,41 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/titleFragment">
+    app:startDestination="@id/fragmentTitle">
+
     <fragment
-        android:id="@+id/titleFragment"
-        android:name="com.example.projecttask1parliamentmemberview.FragmentTitle"
-        android:label="Parliament"
+        android:id="@+id/fragmentTitle"
+        android:name="com.example.projecttask1parliamentmemberview.screen.title.FragmentTitle"
+        android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
-            android:id="@+id/action_titleFragment_to_partyListFragment"
-            app:destination="@id/partyListFragment" />
+            android:id="@+id/action_fragmentTitle_to_fragmentListMember"
+            app:destination="@id/fragmentListMember" />
     </fragment>
+
     <fragment
-        android:id="@+id/partyListFragment"
-        android:name="com.example.projecttask1parliamentmemberview.FragmentListParty"
-        android:label="fragment_party_list"
-        tools:layout="@layout/fragment_list_party" >
-        <action
-            android:id="@+id/action_partyListFragment_to_memberListFragment"
-            app:destination="@id/memberListFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/memberListFragment"
-        android:name="com.example.projecttask1parliamentmemberview.FragmentListMember"
-        android:label="fragment_member_list"
+        android:id="@+id/fragmentListMember"
+        android:name="com.example.projecttask1parliamentmemberview.screen.listmember.FragmentListMember"
+        android:label="fragment_list_member"
         tools:layout="@layout/fragment_list_member" >
         <action
-            android:id="@+id/action_memberListFragment_to_memberFragment"
-            app:destination="@id/memberFragment" />
+            android:id="@+id/action_fragmentListMember_to_fragmentMember"
+            app:destination="@id/fragmentMember" />
     </fragment>
+
     <fragment
-        android:id="@+id/memberFragment"
-        android:name="com.example.projecttask1parliamentmemberview.FragmentParliament"
+        android:id="@+id/fragmentMember"
+        android:name="com.example.projecttask1parliamentmemberview.screen.member.FragmentParliament"
         android:label="fragment_member"
-        tools:layout="@layout/fragment_member">
+        tools:layout="@layout/fragment_member" >
+        <argument
+            android:name="personNumber"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_memberFragment_to_partyListFragment"
-            app:destination="@id/partyListFragment" />
+            android:id="@+id/action_fragmentMember_to_fragmentComment"
+            app:destination="@id/fragmentComment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragmentComment"
+        android:name="com.example.projecttask1parliamentmemberview.screen.comment.FragmentComment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment">
+        <argument
+            android:name="personNumber"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

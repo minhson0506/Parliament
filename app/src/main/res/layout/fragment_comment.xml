@@ -6,34 +6,34 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.memberlist">
+        tools:context=".screens.comment.FragmentComment">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="@string/members_of_parliament"
-            android:textColor="#07756B"
+            android:id="@+id/tv_comment_list"
+            android:layout_width="338dp"
+            android:layout_height="37dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/list_of_comments"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.219"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.043" />
+            app:layout_constraintVertical_bias="0.051" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/member_list"
-            android:layout_width="395dp"
-            android:layout_height="596dp"
-            android:layout_marginBottom="4dp"
+            android:id="@+id/comment_list"
+            android:layout_width="407dp"
+            android:layout_height="580dp"
+            android:layout_marginTop="16dp"
+            android:paddingStart="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.862" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_list"
+            android:paddingLeft="15dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
